@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "poetry-starter-project"
+version = "0.1.0"
+description = ""
+authors = ["Rafael"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.12.2"
+pre-commit = "^3.7.0"
+isort = "^5.13.2"
+black = "^24.4.2"
+pydocstyle = "^6.3.0"
+pip-audit = "^2.7.2"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.0"
+selenium = "^4.20.0"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.6.0"
+mkdocstrings-python = "^1.10.0"
+pygments = "^2.17.2"
+pymdown-extensions = "^10.8.1"
+mkdocs-bootstrap386 = "^0.0.2"
+mkdocs-material = "^9.5.20"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.taskify.tasks]
+run = "streamlit run app/app.py"
+test = "pytest -v"
+format = "black . && isort ."
+kill = "kill -9 $(lsof -t -i :8000)"

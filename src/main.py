@@ -1,0 +1,1 @@
+print("Esse é meu modelo de repositorio padrao para pre-projetos.")
